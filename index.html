@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Portfolio | วริศรา วิทโยภาส</title>
+<meta name="description" content="แฟ้มสะสมผลงานของ นางสาววริศรา วิทโยภาส เพื่อสมัครเข้าศึกษาต่อ คณะโบราณคดี สาขาประวัติศาสตร์ศิลปะ มหาวิทยาลัยศิลปากร">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Sarabun คือฟอนต์ที่พัฒนาต่อจาก TH Sarabun (ฟอนต์มาตรฐานราชการไทย) ใช้เป็นตัวสำรองเมื่อเครื่องไม่มี TH Sarabun New -->
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#9E2A2B; --red-deep:#741A1D;
+  --green:#1F5A46; --green-deep:#143D30;
+  --celadon:#F1F4EE; --jade:#DCE8E0; --paper:#FFFFFF;
+  --ink:#1D2420; --muted:#55615A; --line:#C9D6CD;
+  --font:'TH Sarabun New','THSarabunNew','Sarabun',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--font);font-size:1.3rem;line-height:1.6;color:var(--ink);background:var(--celadon)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.2}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:4px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid var(--red);background:var(--red);color:#fff;transition:background .2s,color .2s}
+.btn:hover{background:var(--red-deep);border-color:var(--red-deep)}
+.btn.ghost{background:transparent;color:var(--red)}
+.btn.ghost:hover{background:var(--red);color:#fff}
+.btn svg{width:22px;height:22px;fill:currentColor}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--green-deep);color:#fff;border-bottom:4px solid var(--red)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;font-size:1.35rem;text-decoration:none}
+nav ul{display:flex;gap:4px;list-style:none}
+nav a{display:block;padding:8px 16px;text-decoration:none;border-radius:4px;transition:background .2s}
+nav a:hover{background:rgba(255,255,255,.14)}
+nav a.active{background:var(--red)}
+.burger{display:none;background:none;border:2px solid #fff;color:#fff;border-radius:4px;width:44px;height:40px;cursor:pointer;font-size:1.4rem;line-height:1}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,var(--green-deep) 0%,var(--green) 100%);color:#fff;padding:64px 0 72px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.hero small{display:inline-block;border-left:4px solid var(--red);padding-left:12px;font-size:1.2rem;opacity:.92;margin-bottom:18px}
+.hero h1{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700}
+.hero .en{font-size:1.4rem;opacity:.85;margin:6px 0 18px}
+.hero p.lead{max-width:34em;font-size:1.35rem;opacity:.95;margin-bottom:28px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero .btn.ghost{color:#fff;border-color:#fff}
+.hero .btn.ghost:hover{background:#fff;color:var(--green-deep)}
+/* กรอบภาพโปรไฟล์ทรงซุ้มโค้งแบบซุ้มประตูโบราณสถาน */
+.portrait{justify-self:center;width:min(300px,80%);aspect-ratio:3/4;border-radius:999px 999px 6px 6px;border:6px solid var(--red);background:var(--jade);box-shadow:0 0 0 6px rgba(255,255,255,.18);display:grid;place-items:center;color:var(--green-deep);text-align:center;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait span{padding:20px;font-size:1.15rem}
+
+/* Sections */
+section{padding:64px 0}
+section.alt{background:var(--paper)}
+.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:32px}
+.sec-head h2{font-size:2.3rem;color:var(--green-deep)}
+.sec-head::after{content:"";flex:1;height:3px;background:linear-gradient(90deg,var(--red) 0 60px,var(--line) 60px)}
+
+/* About */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:40px}
+.about p{margin-bottom:14px;max-width:38em}
+.facts{background:var(--celadon);border:1px solid var(--line);border-top:5px solid var(--red);padding:20px 22px;align-self:start}
+.facts dt{font-weight:700;color:var(--red-deep);font-size:1.1rem}
+.facts dd{margin-bottom:12px}
+.facts dd:last-child{margin-bottom:0}
+.skills{margin-top:28px}
+.skills h3{color:var(--green-deep);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.chips li{background:var(--jade);color:var(--green-deep);padding:2px 14px;border-radius:999px;font-size:1.15rem}
+
+/* Works */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.card{background:var(--paper);border:1px solid var(--line);text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--red)}
+.thumb{aspect-ratio:4/3;background:linear-gradient(135deg,var(--jade),#BFD5C8);display:grid;place-items:center;color:var(--green-deep);font-size:1.15rem;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.card .cap{padding:14px 18px 18px;border-top:4px solid var(--red)}
+.card .fig{color:var(--red);font-weight:700;font-size:1.05rem}
+.card h3{font-size:1.45rem;color:var(--green-deep);margin:2px 0 4px}
+.card p{color:var(--muted);font-size:1.15rem;line-height:1.45}
+dialog{border:none;max-width:640px;width:calc(100% - 32px);margin:auto;padding:0;border-top:6px solid var(--red);background:var(--paper);color:var(--ink)}
+dialog::backdrop{background:rgba(20,61,48,.7)}
+dialog .body{padding:24px 26px 28px}
+dialog h3{font-size:1.8rem;color:var(--green-deep);margin-bottom:6px}
+dialog .meta{color:var(--red-deep);font-weight:700;margin-bottom:12px}
+dialog .thumb{margin:0 0 16px}
+dialog .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+
+/* Activities */
+.timeline{list-style:none;border-left:4px solid var(--green);margin-left:8px}
+.timeline li{position:relative;padding:0 0 28px 28px}
+.timeline li::before{content:"";position:absolute;left:-12px;top:8px;width:20px;height:20px;border-radius:50%;background:var(--red);border:4px solid var(--celadon)}
+.timeline time{color:var(--red-deep);font-weight:700}
+.timeline h3{font-size:1.5rem;color:var(--green-deep)}
+.timeline p{color:var(--muted);max-width:42em}
+
+/* Contact / footer */
+.contact{background:var(--green-deep);color:#fff;padding:48px 0}
+.contact .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+.contact h2{font-size:1.9rem}
+.contact a{color:#fff}
+.contact .btn{background:var(--red)}
+footer{background:var(--red-deep);color:#fff;text-align:center;padding:14px;font-size:1.05rem}
+
+@media (max-width:760px){
+  body{font-size:1.2rem}
+  .burger{display:block}
+  nav{position:absolute;left:0;right:0;top:64px;background:var(--green-deep);border-bottom:4px solid var(--red);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;padding:8px 20px 16px}
+  nav a{padding:12px 8px}
+  .hero{padding:44px 0 52px}
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .portrait{order:-1;width:200px}
+  section{padding:48px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#home" id="brand"></a>
+    <button class="burger" id="burger" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="menu">☰</button>
+    <nav id="menu" aria-label="เมนูหลัก">
+      <ul>
+        <li><a href="#home">หน้าแรก</a></li>
+        <li><a href="#about">แนะนำตัว</a></li>
+        <li><a href="#works">ผลงาน</a></li>
+        <li><a href="#activities">กิจกรรม</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div>
+        <small id="goal"></small>
+        <h1 id="name"></h1>
+        <p class="en" id="nameEn"></p>
+        <p class="lead" id="tagline"></p>
+        <div class="actions">
+          <a class="btn" id="ghBtn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            ดูผลงานบน GitHub
+          </a>
+          <a class="btn ghost" href="#works">ชมผลงาน</a>
+        </div>
+      </div>
+      <div class="portrait" id="portrait"></div>
+    </div>
+  </section>
+
+  <section id="about" class="alt">
+    <div class="wrap">
+      <div class="sec-head"><h2>แนะนำตัว</h2></div>
+      <div class="about">
+        <div>
+          <div id="aboutText"></div>
+          <div class="skills">
+            <h3>ทักษะและความสนใจ</h3>
+            <ul class="chips" id="skills"></ul>
+          </div>
+        </div>
+        <dl class="facts" id="facts"></dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="wrap">
+      <div class="sec-head"><h2>ผลงาน</h2></div>
+      <div class="grid" id="worksGrid"></div>
+    </div>
+  </section>
+
+  <section id="activities" class="alt">
+    <div class="wrap">
+      <div class="sec-head"><h2>กิจกรรม</h2></div>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </section>
+</main>
+
+<div class="contact">
+  <div class="wrap">
+    <div>
+      <h2>ติดต่อ</h2>
+      <p id="contactLine"></p>
+    </div>
+    <a class="btn" id="ghBtn2" target="_blank" rel="noopener">ดูผลงานบน GitHub</a>
+  </div>
+</div>
+<footer id="footer"></footer>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <div class="body" id="dlgBody"></div>
+</dialog>
+
+<script>
+/* ============================================================
+   แก้ไขข้อมูลทั้งหมดได้ที่นี่ (ข้อมูลด้านล่างเป็นตัวอย่าง)
+   ============================================================ */
+const DATA = {
+  name: "นางสาว วริศรา วิทโยภาส",
+  nameEn: "Miss Warisara Witthayopas",
+  shortName: "วริศรา วิทโยภาส",
+  goal: "สมัครเข้าศึกษาต่อ คณะโบราณคดี สาขาประวัติศาสตร์ศิลปะ มหาวิทยาลัยศิลปากร",
+  tagline: "ชอบอ่านเรื่องราวที่ซ่อนอยู่ในลวดลาย รูปทรง และโบราณสถาน และอยากเรียนรู้ว่าศิลปะบอกอะไรเกี่ยวกับผู้คนในแต่ละยุคสมัย",
+  photo: "",                       // ใส่ path รูป เช่น "images/profile.jpg" (เว้นว่างเพื่อแสดงกรอบตัวอย่าง)
+  github: "https://github.com/your-username",   // ← ใส่ลิงก์ GitHub ของคุณ
+  email: "example@email.com",
+  phone: "0xx-xxx-xxxx",
+  about: [
+    "สวัสดีค่ะ ชื่อวริศรา วิทโยภาส เป็นนักเรียนชั้นมัธยมศึกษาปีที่ 6 โรงเรียน [ชื่อโรงเรียน] แผนการเรียน [ชื่อแผนการเรียน]",
+    "ฉันสนใจประวัติศาสตร์ศิลปะไทยและศิลปะเอเชียตะวันออกเฉียงใต้ ชอบเดินชมพิพิธภัณฑ์และโบราณสถาน และบันทึกสิ่งที่ได้เห็นเป็นภาพร่างและบทความสั้น ๆ",
+    "ฉันเลือกศิลปากรเพราะเป็นสถาบันที่ผสานการเรียนโบราณคดีเข้ากับงานศิลปะอย่างใกล้ชิด และหวังว่าจะได้ทำงานด้านอนุรักษ์และเผยแพร่มรดกทางวัฒนธรรมในอนาคต"
+  ],
+  facts: [
+    ["วันเกิด", "[วว/ดด/ปปปป]"],
+    ["สถานศึกษา", "โรงเรียน [ชื่อโรงเรียน]"],
+    ["แผนการเรียน", "[ศิลป์-ภาษา / วิทย์-คณิต ฯลฯ]"],
+    ["เกรดเฉลี่ยสะสม", "[x.xx]"],
+    ["ภาษา", "ไทย (เจ้าของภาษา), อังกฤษ (ระดับดี)"]
+  ],
+  skills: ["การวาดภาพร่าง","การถ่ายภาพ","การค้นคว้าข้อมูล","การเขียนบทความ","ภาษาอังกฤษ","Canva","Microsoft Office","HTML/CSS เบื้องต้น"],
+  works: [
+    { title: "ภาพร่างลวดลายประดับวัดอรุณฯ", type: "ภาพวาด", year: "2568", img: "",
+      desc: "บันทึกลวดลายกระเบื้องเคลือบที่ประดับพระปรางค์ พร้อมอธิบายที่มาและความหมายของลวดลาย",
+      link: "" },
+    { title: "บทความ: อ่านภาพจิตรกรรมฝาผนังสมัยรัตนโกสินทร์", type: "บทความ", year: "2568", img: "",
+      desc: "ศึกษาองค์ประกอบ การใช้สี และเรื่องราวในจิตรกรรมฝาผนัง จากการไปเยี่ยมชมวัดและค้นคว้าเพิ่มเติม",
+      link: "" },
+    { title: "แฟ้มภาพถ่ายโบราณสถานอยุธยา", type: "ภาพถ่าย", year: "2567", img: "",
+      desc: "ชุดภาพถ่ายโบราณสถานในพระนครศรีอยุธยา เน้นรายละเอียดสถาปัตยกรรมและร่องรอยของกาลเวลา",
+      link: "" },
+    { title: "โครงงาน: ศิลปะทวารวดีในประเทศไทย", type: "โครงงาน", year: "2567", img: "",
+      desc: "รวบรวมและเปรียบเทียบธรรมจักรและพระพุทธรูปสมัยทวารวดี นำเสนอเป็นสไลด์และรายงาน",
+      link: "" }
+  ],
+  activities: [
+    { date: "พ.ค. 2568", title: "อาสาสมัครนำชมพิพิธภัณฑ์", desc: "เล่าเรื่องวัตถุจัดแสดงให้ผู้เยี่ยมชมรุ่นเยาว์ [ชื่อพิพิธภัณฑ์]" },
+    { date: "ก.พ. 2568", title: "ค่ายสำรวจโบราณสถาน", desc: "เรียนรู้การจดบันทึกและวาดแปลนโบราณสถานเบื้องต้นร่วมกับวิทยากร" },
+    { date: "2567", title: "ประธานชมรมศิลปะ", desc: "จัดนิทรรศการผลงานนักเรียนประจำภาคเรียน และดูแลสมาชิกชมรมกว่า 30 คน" },
+    { date: "2566", title: "รางวัลชนะเลิศ ประกวดวาดภาพ", desc: "การประกวดวาดภาพระดับโรงเรียน หัวข้อมรดกไทย" }
+  ]
+};
+/* ============================================================ */
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const picture = (src, label) => src ? `<img src="${esc(src)}" alt="${esc(label)}" loading="lazy">` : `<span>ภาพตัวอย่าง</span>`;
+
+document.title = `E-Portfolio | ${DATA.shortName}`;
+$("brand").textContent = DATA.shortName;
+$("name").textContent = DATA.name;
+$("nameEn").textContent = DATA.nameEn;
+$("goal").textContent = DATA.goal;
+$("tagline").textContent = DATA.tagline;
+$("ghBtn").href = $("ghBtn2").href = DATA.github;
+$("portrait").innerHTML = DATA.photo ? `<img src="${esc(DATA.photo)}" alt="ภาพของ ${esc(DATA.name)}">` : `<span>วางรูปโปรไฟล์ที่นี่</span>`;
+$("aboutText").innerHTML = DATA.about.map(p => `<p>${esc(p)}</p>`).join("");
+$("facts").innerHTML = DATA.facts.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
+$("skills").innerHTML = DATA.skills.map(s => `<li>${esc(s)}</li>`).join("");
+$("contactLine").innerHTML = `อีเมล <a href="mailto:${esc(DATA.email)}">${esc(DATA.email)}</a> · โทร ${esc(DATA.phone)}`;
+$("footer").textContent = `© ${new Date().getFullYear() + 543} ${DATA.name} · แฟ้มสะสมผลงานเพื่อยื่นสมัครเข้าศึกษาต่อ`;
+
+$("worksGrid").innerHTML = DATA.works.map((w, i) => `
+  <button class="card" data-i="${i}" aria-haspopup="dialog">
+    <div class="thumb">${picture(w.img, w.title)}</div>
+    <div class="cap">
+      <div class="fig">ภาพที่ ${i + 1} · ${esc(w.type)}</div>
+      <h3>${esc(w.title)}</h3>
+      <p>${esc(w.desc)}</p>
+    </div>
+  </button>`).join("");
+
+$("timeline").innerHTML = DATA.activities.map(a => `
+  <li><time>${esc(a.date)}</time><h3>${esc(a.title)}</h3><p>${esc(a.desc)}</p></li>`).join("");
+
+/* หน้าต่างรายละเอียดผลงาน */
+const dlg = $("dlg");
+$("worksGrid").addEventListener("click", e => {
+  const card = e.target.closest(".card"); if (!card) return;
+  const w = DATA.works[card.dataset.i];
+  $("dlgBody").innerHTML = `
+    <h3 id="dlgTitle">${esc(w.title)}</h3>
+    <div class="meta">${esc(w.type)} · พ.ศ. ${esc(w.year)}</div>
+    <div class="thumb">${picture(w.img, w.title)}</div>
+    <p>${esc(w.desc)}</p>
+    <div class="row">
+      ${w.link ? `<a class="btn" href="${esc(w.link)}" target="_blank" rel="noopener">เปิดผลงาน</a>` : ""}
+      <a class="btn ghost" href="${esc(DATA.github)}" target="_blank" rel="noopener">GitHub</a>
+      <button class="btn ghost" id="closeDlg">ปิด</button>
+    </div>`;
+  $("closeDlg").onclick = () => dlg.close();
+  dlg.showModal();
+});
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+
+/* เมนูมือถือ */
+const burger = $("burger"), menu = $("menu");
+const setMenu = open => { menu.classList.toggle("open", open); burger.setAttribute("aria-expanded", open); burger.textContent = open ? "✕" : "☰"; };
+burger.onclick = () => setMenu(!menu.classList.contains("open"));
+menu.addEventListener("click", e => { if (e.target.tagName === "A") setMenu(false); });
+
+/* ไฮไลต์เมนูตามส่วนที่กำลังดูอยู่ */
+const links = [...menu.querySelectorAll("a")];
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) links.forEach(a => a.classList.toggle("active", a.hash === "#" + en.target.id));
+  });
+}, { rootMargin: "-45% 0px -50% 0px" });
+document.querySelectorAll("main section").forEach(s => io.observe(s));
+</script>
+</body>
+</html>
